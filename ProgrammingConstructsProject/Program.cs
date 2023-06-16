@@ -1,32 +1,59 @@
-﻿namespace ProgrammingConstructsProject
+﻿using System.ComponentModel;
+using System.Diagnostics.Metrics;
+
+namespace ProgrammingConstructsProject
 {
     internal class Program
     {
         static void Main(string[] args)
         {
 
-            Console.Write("Enter a number: ");
-            int number = Convert.ToInt32(Console.ReadLine());
+            int headsCount = 0;
+            int tailsCount = 0;
+            Random random = new Random();
 
-            int factorial = CalculateFactorial(number);
-
-            Console.WriteLine("Factorial of {0} is: {1}", number, factorial);
-        }
-
-        static int CalculateFactorial(int n)
-        {
-            int factorial = 1;
-
-            for (int i = 1; i <= n; i++)
+            while (headsCount < 20 && tailsCount < 20)
             {
-                factorial *= i;
+                int flip = random.Next(2); // 0 represents heads, 1 represents tails
+
+                if (flip == 0)
+                {
+                    headsCount++;
+                    Console.WriteLine("Heads");
+                }
+                else
+                {
+                    tailsCount++;
+                    Console.WriteLine("Tails");
+                }
+
+                if (headsCount == 20 || tailsCount == 20)
+                {
+                    break;
+                }
             }
 
-            return factorial;
+            if (headsCount == 20)
+            {
+                Console.WriteLine("Heads wins!");
+            }
+            else
+            {
+                Console.WriteLine("Tails wins!");
+            }
+
+            Console.ReadLine();
         }
     }
+    
+
+
+
+
+
 
 }
 
 
-        
+
+
