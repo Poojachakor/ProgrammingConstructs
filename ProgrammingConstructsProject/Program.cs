@@ -4,24 +4,29 @@
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter a number (N): ");
-            int N = int.Parse(Console.ReadLine());
 
-            int sumOfSquares = 0;
-            for (int i = 1; i <= N; i++)
-            {
-                sumOfSquares += i * i;
-            }
+            Console.Write("Enter a number: ");
+            int number = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("The sum of squares of the first {0} numbers is: {1}", N, sumOfSquares);
+            int factorial = CalculateFactorial(number);
+
+            Console.WriteLine("Factorial of {0} is: {1}", number, factorial);
         }
 
+        static int CalculateFactorial(int n)
+        {
+            int factorial = 1;
+
+            for (int i = 1; i <= n; i++)
+            {
+                factorial *= i;
+            }
+
+            return factorial;
+        }
     }
 
-    
 }
 
 
-
-
-    
+        
