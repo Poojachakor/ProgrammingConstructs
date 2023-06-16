@@ -4,33 +4,29 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter three numbers:");
-            int number1 = Convert.ToInt32(Console.ReadLine());
-            int number2 = Convert.ToInt32(Console.ReadLine());
-            int number3 = Convert.ToInt32(Console.ReadLine());
 
-            int largestNumber = GetLargestNumber(number1, number2, number3);
-            Console.WriteLine("The largest number is: " + largestNumber);
-        }
+            Console.Write("Input the marks obtained in Physics: ");
+            int physicsMarks = Convert.ToInt32(Console.ReadLine());
 
-        static int GetLargestNumber(int num1, int num2, int num3)
-        {
-            int largest = num1;
+            Console.Write("Input the marks obtained in Chemistry: ");
+            int chemistryMarks = Convert.ToInt32(Console.ReadLine());
 
-            if (num2 > largest)
+            Console.Write("Input the marks obtained in Mathematics: ");
+            int mathMarks = Convert.ToInt32(Console.ReadLine());
+
+            if (mathMarks >= 65 && physicsMarks >= 55 && chemistryMarks >= 50 && (mathMarks + physicsMarks + chemistryMarks) >= 180)
             {
-                largest = num2;
+                Console.WriteLine("The candidate is eligible for admission.");
             }
-
-            if (num3 > largest)
+            else if (mathMarks >= 65 && (physicsMarks + chemistryMarks) >= 140)
             {
-                largest = num3;
+                Console.WriteLine("The candidate is eligible for admission.");
             }
-
-            return largest;
+            else
+            {
+                Console.WriteLine("The candidate is not eligible for admission.");
+            }
         }
     }
 
-    
-    
 }
