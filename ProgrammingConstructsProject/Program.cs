@@ -4,21 +4,24 @@
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter a value for n: ");
-            int n = int.Parse(Console.ReadLine());
+            Console.Write("Enter a number (N): ");
+            int N = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Powers of 2 up to 2^{0}:", n);
-
-            for (int i = 0; i <= n; i++)
+            int sumOfSquares = 0;
+            for (int i = 1; i <= N; i++)
             {
-                Console.WriteLine("2^{0} = {1}", i, Math.Pow(2, i));
+                sumOfSquares += i * i;
             }
 
+            Console.WriteLine("The sum of squares of the first {0} numbers is: {1}", N, sumOfSquares);
         }
 
     }
 
-
-
+    
 }
+
+
+
+
     
