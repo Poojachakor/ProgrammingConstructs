@@ -4,19 +4,17 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a number: ");
-            int number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter your age: ");
+            int age = Convert.ToInt32(Console.ReadLine());
 
-            if (number % 2 == 0)
+            if (age >= 18)
             {
-                Console.WriteLine("The number is even.");
+                Console.WriteLine("You are eligible to cast your vote.");
             }
             else
             {
-                Console.WriteLine("The number is odd.");
+                Console.WriteLine("You are not eligible to cast your vote yet.");
             }
-
-            Console.ReadLine();
         }
 
     }
